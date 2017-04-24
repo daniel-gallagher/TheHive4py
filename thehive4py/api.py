@@ -10,7 +10,7 @@ import magic
 try:
     import requests
 except Exception as excp:
-    warnings.warn("requests library is non installed")
+    warnings.warn("requests library is not installed")
 
 
 class TheHiveApi:
