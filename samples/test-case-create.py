@@ -45,18 +45,3 @@ if response.status_code == requests.codes.ok:
     print('')
 else:
     print('ko: {}/{}'.format(response.status_code, response.text))
-
-# Add a new task to the created case
-print('Add a task {}'.format(id))
-print('-----------------------------')
-response = api.create_case_task(id, CaseTask(
-    title='Yet Another Task',
-    status='InProgress',
-    owner='nabil',
-    flag=True,
-    startDate=int(time.time())*1000))
-if response.status_code == 201:
-    print(json.dumps(response.json(), indent=4, sort_keys=True))
-    print('')
-else:
-    print('ko: {}/{}'.format(response.status_code, response.text))
