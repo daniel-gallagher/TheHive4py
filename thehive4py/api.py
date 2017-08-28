@@ -157,7 +157,7 @@ class TheHiveApi:
         }
 
         try:
-            return requests.post(req, json=data, proxies=self.proxies, auth=self.auth, params=params, verify=self.cert)
+            return requests.post(req, data=data, proxies=self.proxies, auth=self.auth, params=params, verify=self.cert)
         except requests.exceptions.RequestException as e:
             sys.exit("Error: {}".format(e))
 
