@@ -16,7 +16,7 @@ def search(title, query, range, sort):
     print('-----------------------------')
     response = api.find_cases(query=query, range=range, sort=sort)
 
-    if response.status_code == 200:
+    if response.status_code == 201:
         print(json.dumps(response.json(), indent=4, sort_keys=True))
         print('')
     else:
