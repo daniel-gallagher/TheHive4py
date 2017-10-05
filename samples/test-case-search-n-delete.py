@@ -10,7 +10,7 @@ import sys
 import json
 from thehive4py.api import TheHiveApi
 
-api = TheHiveApi('http://127.0.0.1:9000', 'username', 'password', {'http': '', 'https': ''})
+api = TheHiveApi('http://127.0.0.1:9000', 'api_key')
 
 def delete_case(caseId):
     response = api.delete_case(caseId)

@@ -177,6 +177,17 @@ class TheHiveApi:
         except requests.exceptions.RequestException as e:
             sys.exit("Error: {}".format(e))
 
+    def delete_case(self, caseId):
+        """
+            :param caseId: Case identifier
+        """
+        req = self.url + "/api/case/{}".format(caseId)
+
+        try:
+            return requests.delete(req, proxies=self.proxies, auth=self.auth, verify=self.cert)
+        except requests.exceptions.RequestException as e:
+            sys.exit("Error: {}".format(e))
+
     def find_cases(self, **attributes):
         return self.__find_rows("/api/case/_search", **attributes)
 
